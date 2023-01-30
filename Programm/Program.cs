@@ -6,7 +6,11 @@
 
 
 
-
+// Создание массива строк
+static string[] CreateArray(int args)
+    {
+        return new string[args];
+    }
 
 
 
