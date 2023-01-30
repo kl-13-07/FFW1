@@ -46,7 +46,7 @@ for (int i = 0; i < M.Length; i++)
 
 
         N[index] = M[i];
-        index = index + 1;
+        index++;
     }
 
 
