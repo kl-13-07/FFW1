@@ -4,17 +4,11 @@
 [" 1234, "1567", "-2", "computer science” -> ["-2"]
 ["Russia", "Denmark", "Kazan”] -> [] */
 
-
-
 // Создание массива строк
 static string[] CreateArray(int args)
 {
     return new string[args];
 }
-
-
-
-
 
 // Печать массива строк
 static void PrintArray(string[] array)
@@ -25,44 +19,43 @@ static void PrintArray(string[] array)
     {
         Console.Write(array[i]);
         Console.Write(";");
-
-
     }
 
 }
-string[] M = { "r44s", "ls", "1", "112", "1л11" };
+// создание масива строк М и наполнение его с клавиатуры пользователем
+Console.WriteLine("введите длину Массива");
+
+int size_M = Convert.ToInt32(Console.ReadLine());
+string[] M = CreateArray(size_M);
+
+for (int j = 0; j < size_M; j++)
+{
+    Console.WriteLine("введите строку");
+
+    M[j] = Console.ReadLine();
+}
+
+// создание массива N
 string[] N = CreateArray(M.Length);
 int index = 0;
 
-
-
+// идём по массиву и переписываем строки длиной менее 3 символов в массив N
 for (int i = 0; i < M.Length; i++)
 
 {
-
     if (M[i].Length <= 3)
     {
-
-
 
         N[index] = M[i];
         index++;
     }
 
-
-
-
 }
-PrintArray(N);
+//PrintArray(N);
 
-N = N.Where(x => !string.IsNullOrEmpty(x)).ToArray();
-
-
-
-
+N = N.Where(x => !string.IsNullOrEmpty(x)).ToArray(); // Удаляем пустые строки
 
 Console.WriteLine();
-
 
 PrintArray(N);
 
