@@ -8,58 +8,63 @@
 
 // Создание массива строк
 static string[] CreateArray(int args)
-    {
-        return new string[args];
-    }
+{
+    return new string[args];
+}
 
 
 
 
 
 // Печать массива строк
-    static void PrintArray(string[] array)
-    {
+static void PrintArray(string[] array)
+{
 
-        int size = array.Length;
-        for (int i = 0; i < size; i++)
-        {
-            Console.Write(array[i]);
-            Console.Write(";");
-            
-            
-        }
+    int size = array.Length;
+    for (int i = 0; i < size; i++)
+    {
+        Console.Write(array[i]);
+        Console.Write(";");
+
 
     }
-string [] M = {"r44s", "ls", "1", "112", "1л11"};
-string [] N = CreateArray (M.Length);
+
+}
+string[] M = { "r44s", "ls", "1", "112", "1л11" };
+string[] N = CreateArray(M.Length);
 int index = 0;
 
 
 
 for (int i = 0; i < M.Length; i++)
+
 {
-if (M[i].Length <= 3)
+
+    if (M[i].Length <= 3)
+    {
 
 
 
+        N[index] = M[i];
+        index = index + 1;
+    }
 
-N[index] = M[i];
-index++;
 
 
 
 }
+PrintArray(N);
 
 N = N.Where(x => !string.IsNullOrEmpty(x)).ToArray();
 
 
 
-PrintArray (N);
+
 
 Console.WriteLine();
 
 
-PrintArray (N);
+PrintArray(N);
 
 
 
